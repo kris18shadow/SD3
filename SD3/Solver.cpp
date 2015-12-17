@@ -99,18 +99,17 @@ bool Solver::inputNames()
 void Solver::commandSequence()
 {
 	//ENTER COMMAND:
-	size_t leftBorder = 0, rightBorder = N;
+	size_t leftBorder = 0, rightBorder = N - 1;
 
 	for (size_t i = 0; i < Q; i++)
 	{
 		char command[64];
 		std::cin.sync();
 		std::cin.getline(command, 63, '\n');
-		std::cout << "@ " << command << " @";
 
 		if (strncmp(command, "ENTER", 4) == 0)
 		{
-			size_t currPos = 5;
+			size_t currPos = 6;
 			char firstArg[8], secondArg[8];
 
 			size_t x = 0;
@@ -134,9 +133,19 @@ void Solver::commandSequence()
 				}
 				currPos++;
 			}
-
+			
 			leftBorder = atoi(firstArg);
+			if (leftBorder > N)
+			{
+				std::cerr << "\nWrong Input! Left Border is bigger than N!\n";
+				leftBorder = 0;
+			}
 			rightBorder = atoi(secondArg);
+			if (rightBorder > N)
+			{
+				std::cerr << "\nWrong Input! Right Border is bigger than N!\n";
+				rightBorder = N - 1;
+			}			
 		}
 		else
 			if (strncmp(command, "QUERY", 4) == 0)
@@ -153,7 +162,7 @@ void Solver::commandSequence()
 				}
 
 				size_t matchCounter = 0;
-				for (size_t i = leftBorder; i < rightBorder; i++)
+				for (size_t i = leftBorder; i <= rightBorder; i++)
 				{
 					if (strncmp(arg, names[i], x) == 0)
 						matchCounter++;

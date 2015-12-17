@@ -13,6 +13,8 @@ bool leftIsLess(char* left, char* right)
 
 	for (size_t i = 0; i < min; i++)
 	{
+		if (toupper(left[i]) > toupper(right[i]))
+			return false;
 		if (toupper(left[i]) < toupper(right[i]))
 			return true;
 	}
@@ -22,7 +24,7 @@ bool leftIsLess(char* left, char* right)
 
 void insertionSort(char** arr, int length) 
 {
-	size_t j;
+	int j;
 	char temp[9];
 
 	for (int i = 0; i < length; i++) 
@@ -37,4 +39,17 @@ void insertionSort(char** arr, int length)
 			j--;
 		}
 	}
+
+	std::cout << "\nSorted names: ";
+
+	for (size_t i = 0; i < length; i++)
+	{
+		for (size_t j = 0; arr[i][j] != '\0'; j++)
+		{
+			std::cout <<  arr[i][j];
+		}
+	}
+
+	std::cout << std::endl;
+
 }
