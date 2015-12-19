@@ -1,9 +1,8 @@
-﻿Build started 18.12.2015 г. 0:22:25.
+﻿Build started 19.12.2015 г. 15:27:57.
      1>Project "C:\Users\Chris\documents\visual studio 2015\Projects\SD3\SD3\SD3.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Solver.cpp
          Solver.cpp
-     1>c:\users\chris\documents\visual studio 2015\projects\sd3\sd3\insertionsort.h(45): warning C4018: '<': signed/unsigned mismatch
      1>c:\users\chris\documents\visual studio 2015\projects\sd3\sd3\insertionsort.h(36): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
          c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\string.h(119): note: see declaration of 'strcpy'
      1>c:\users\chris\documents\visual studio 2015\projects\sd3\sd3\insertionsort.h(37): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -18,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.00
+Time Elapsed 00:00:03.63

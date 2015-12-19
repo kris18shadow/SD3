@@ -22,12 +22,12 @@ bool leftIsLess(char* left, char* right)
 	return false;
 }
 
-void insertionSort(char** arr, int length) 
+void insertionSort(char** arr, size_t length) 
 {
 	int j;
 	char temp[9];
 
-	for (int i = 0; i < length; i++) 
+	for (size_t i = 0; i < length; i++) 
 	{
 		j = i;
 
@@ -48,6 +48,7 @@ void insertionSort(char** arr, int length)
 		{
 			std::cout <<  arr[i][j];
 		}
+		std::cout << " ";
 	}
 
 	std::cout << std::endl;

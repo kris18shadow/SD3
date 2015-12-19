@@ -23,6 +23,7 @@ void Solver::inputNQ()
 
 	while (true)
 	{
+		std::cout << "\nEnter N and Q: ";
 		std::cin >> N >> Q;
 		if (N > 1000000 || Q > 500000)
 		{
@@ -41,6 +42,7 @@ bool Solver::inputNames()
 	//READING NAMES:
 	//
 	char buffer[1028];
+	std::cout << "Enter names: ";
 
 	std::cin.ignore();
 	std::cin.getline(buffer, 1027, '\n');
@@ -99,10 +101,12 @@ bool Solver::inputNames()
 void Solver::commandSequence()
 {
 	//ENTER COMMAND:
+	std::cout << "\nYou can enter " << Q << " commands:" << std::endl;
 	size_t leftBorder = 0, rightBorder = N - 1;
-
+	
 	for (size_t i = 0; i < Q; i++)
 	{
+		std::cout << "\nCommand " << i + 1 << " out of " << Q << " :" << std::endl;
 		char command[64];
 		std::cin.sync();
 		std::cin.getline(command, 63, '\n');
@@ -137,15 +141,18 @@ void Solver::commandSequence()
 			leftBorder = atoi(firstArg);
 			if (leftBorder > N)
 			{
-				std::cerr << "\nWrong Input! Left Border is bigger than N!\n";
+				std::cerr << "\nWrong Input! Left Border is bigger than N!" << std::endl;
 				leftBorder = 0;
 			}
 			rightBorder = atoi(secondArg);
 			if (rightBorder > N)
 			{
-				std::cerr << "\nWrong Input! Right Border is bigger than N!\n";
+				std::cerr << "\nWrong Input! Right Border is bigger than N!" << std::endl;
 				rightBorder = N - 1;
-			}			
+			}	
+
+			std::cout << "Entered range [" << leftBorder << ";" 
+				      << rightBorder << "]" << std::endl;
 		}
 		else
 			if (strncmp(command, "QUERY", 4) == 0)
@@ -171,7 +178,7 @@ void Solver::commandSequence()
 			}
 			else
 			{
-				std::cerr << "Wrong input! Available commands are ENTER and QUERY!\n";
+				std::cerr << "Wrong input! Available commands are ENTER and QUERY!" << std::endl;
 			}
 	}
 
